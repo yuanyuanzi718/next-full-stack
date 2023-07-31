@@ -48,15 +48,3 @@ export const POST = async (req: NextRequest) => {
     data: {},
   });
 };
-
-// export const DELETE = async (req: NextRequest, { params }: any) => {
-//   const { id } = params;
-//   console.log(id, "id");
-//   const res = await prisma.article.findUnique({
-//     where: { id },
-//   });
-//   // return NextResponse.json({
-//   //   success: true,
-//   //   errorMessage: "修改成功",
-//   // });
-// };

@@ -12,7 +12,7 @@ export default function LoginPage() {
     }).then((res) => res.json());
     if (res.success) {
       message.success("登录成功");
-      nav.push("/admin/dashboard");
+      nav.push("/admin/articles");
     }
   };
 

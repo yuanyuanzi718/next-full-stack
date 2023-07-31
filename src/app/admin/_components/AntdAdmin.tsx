@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, DashboardOutlined } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
+import news from "../../../../public/news.png";
 const { Header, Sider, Content } = Layout;
 
 function AntdContainer({ children }: any) {
@@ -17,7 +19,10 @@ function AntdContainer({ children }: any) {
   return (
     <Layout style={{ height: "100vh" }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
+        <div style={{ height: 64, display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <Image src={news} alt="新闻管理" width={40} height={40} />
+          <p style={{ fontSize: 18, marginLeft: 10, color: "white" }}>新闻管理后台</p>
+        </div>
         <Menu
           theme="dark"
           mode="inline"
@@ -28,16 +33,6 @@ function AntdContainer({ children }: any) {
             nav.push(key);
           }}
           items={[
-            {
-              key: "/admin/dashboard",
-              icon: <DashboardOutlined />,
-              label: "看板",
-            },
-            {
-              key: "/admin/user",
-              icon: <UserOutlined />,
-              label: "用户信息",
-            },
             {
               key: "/admin/articles",
               icon: <UserOutlined />,
