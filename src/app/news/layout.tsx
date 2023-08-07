@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Navbar from "./_components/navbar.tsx/Navbar";
 import Footer from "./_components/footer/Footer";
 import styles from "./page.module.css";
+import { ThemeProvider } from "./context/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 function Newslayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.main}>
-      <div className={styles.container}>
-        <Navbar />
-        {children}
-        <Footer />
-      </div>
+      <ThemeProvider>
+        <div className={styles.container}>
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
+      </ThemeProvider>
     </div>
   );
 }
