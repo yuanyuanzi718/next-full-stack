@@ -24,3 +24,17 @@ export const DELETE = async (req: NextRequest, { params }: any) => {
     errorMessage: "删除成功",
   });
 };
+
+export const GET = async (req: NextRequest, { params }: any) => {
+  const { id } = params;
+  const data = await prisma.article.findMany({
+    where: {
+      id: id,
+    },
+  });
+  return NextResponse.json({
+    success: true,
+    errorMessage: "",
+    data: data[0],
+  });
+};

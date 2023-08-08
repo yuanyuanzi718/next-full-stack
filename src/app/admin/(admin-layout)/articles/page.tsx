@@ -66,9 +66,14 @@ export default function ArticlesPage() {
         setHtml("");
         break;
       case "update":
+        const resData = await fetch(`/api/admin/articles/${record.id}`, {
+          method: "GET",
+        }).then((res) => res.json());
+        if (resData.success) {
+          setFormData(resData.data);
+        }
         setOpen(true);
         setCurrentId(record.id);
-        setFormData(record);
         setImageUrl(record.image);
         setHtml(record.content);
         break;
@@ -89,6 +94,12 @@ export default function ArticlesPage() {
       title: "标题",
       dataIndex: "title",
       key: "title",
+      width: "20%",
+    },
+    {
+      title: "新闻类型",
+      dataIndex: "newsType",
+      key: "newsType",
       width: "20%",
     },
     {

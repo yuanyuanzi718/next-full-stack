@@ -5,12 +5,10 @@ import styles from "./navbar.module.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const links = [
-  { id: 1, title: "Home", url: "/news" },
-  { id: 2, title: "Portfolio", url: "/news/portfolio" },
-  { id: 3, title: "Blog", url: "/news/blog" },
-  { id: 4, title: "About", url: "/news/about" },
-  { id: 5, title: "Contact", url: "/news/contact" },
-  { id: 6, title: "Dashboard", url: "/news/dashboard" },
+  { id: 1, title: "体育", url: "/news/sport" },
+  { id: 2, title: "经济", url: "/news/economy" },
+  { id: 3, title: "健康", url: "/news/health" },
+  { id: 4, title: "汽车", url: "/news/cars" },
 ];
 const Navbar = () => {
   return (
@@ -25,9 +23,6 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button className={styles.logout} onClick={() => {}}>
-          Logout
-        </button>
       </div>
     </div>
   );

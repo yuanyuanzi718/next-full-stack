@@ -13,6 +13,7 @@ datasource db {
 model Article {
   id        String   @id @unique @default(uuid())
   title     String
+  newsType  String
   desc      String?  @default("")
   content   String?  @default("")
   image     String?  @default("")

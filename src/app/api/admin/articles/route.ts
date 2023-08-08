@@ -2,8 +2,6 @@ import { prisma } from "@/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req: NextRequest) => {
-  console.log(req.nextUrl, "req.nextUrl.searchParams");
-
   let per = (req.nextUrl.searchParams.get("per") as any) * 1 || 10;
   let page = (req.nextUrl.searchParams.get("page") as any) * 1 || 1;
   let title = (req.nextUrl.searchParams.get("title") as string) || "";

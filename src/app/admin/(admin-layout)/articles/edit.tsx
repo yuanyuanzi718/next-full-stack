@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Form, Input, Modal } from "antd";
+import { Form, Input, Modal, Select } from "antd";
 import MyUpload from "../../_components/MyUpload";
 import dynamic from "next/dynamic";
 // 动态引入,不在编译的时候做出来
@@ -64,6 +64,37 @@ const Edit: React.FC<CollectionCreateFormProps> = ({ open, onCreate, onCancel, f
           ]}
         >
           <Input placeholder="请输入标题" />
+        </Form.Item>
+        <Form.Item
+          label="新闻类型"
+          name="newsType"
+          rules={[
+            {
+              required: true,
+              message: "请选择",
+            },
+          ]}
+        >
+          <Select
+            options={[
+              {
+                value: "体育",
+                label: "体育",
+              },
+              {
+                value: "经济",
+                label: "经济",
+              },
+              {
+                value: "健康",
+                label: "健康",
+              },
+              {
+                value: "汽车",
+                label: "汽车",
+              },
+            ]}
+          />
         </Form.Item>
         <Form.Item label="简介" name="desc">
           <Input.TextArea placeholder="请输入简介" />
