@@ -1,5 +1,8 @@
 // "use client";
 import React from "react";
+import Image from "next/image";
+import styles from "./page.module.css";
+import dayjs from "dayjs";
 
 async function getData() {
   const res = await fetch(process.env.URL + "/api/news/sport", {
@@ -13,7 +16,7 @@ async function getData() {
 }
 
 async function SportPage() {
-  const data = await getData();
+  const { success, data } = await getData();
   console.log(data, "qianduan");
   // useEffect(() => {
   //   fetch(`/api/news/sport`)
@@ -24,10 +27,18 @@ async function SportPage() {
   // }, []);
 
   return (
-    <div>
-      <ul>
-        {data.data.map((item: any) => {
-          return <li key={item.id}>{item.title}</li>;
+    <div className={styles.container}>
+      <ul className={styles.ul}>
+        {data.map((item: any) => {
+          return (
+            <li key={item.id} className={styles.li}>
+              <Image src={item.image} alt={item.title} width={150} height={150} className={styles.image} />
+              <div className={styles.liRight}>
+                <p>{item.title}</p>
+                <p>{dayjs(item.updatedAt).format("YYYY/MM/DD hh:mm:ss")}</p>
+              </div>
+            </li>
+          );
         })}
       </ul>
     </div>
