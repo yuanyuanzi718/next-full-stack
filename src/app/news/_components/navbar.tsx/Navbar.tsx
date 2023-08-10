@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
@@ -13,8 +13,12 @@ const links = [
 ];
 const Navbar = () => {
   const pathname = usePathname();
-  const [current, SetCurrent] = useState("");
-
+  const [current, setCurrent] = useState("");
+  useEffect(() => {
+    if (pathname === "/news") {
+      setCurrent(pathname);
+    }
+  }, [pathname]);
   return (
     <div className={styles.container}>
       <Link href="/news" className={styles.logo}>
@@ -25,15 +29,15 @@ const Navbar = () => {
           <Link
             key={link.id}
             href={link.url}
-            className={current === link.id || pathname.includes(link.id) ? styles.type : ""}
+            className={current === link.id || pathname.includes(link.id) ? styles.type : styles.nonetype}
             onClick={() => {
-              SetCurrent(link.id);
+              setCurrent(link.id);
             }}
           >
             {link.title}
           </Link>
         ))}
-        <DarkModeToggle />
+        {/* <DarkModeToggle /> */}
       </div>
     </div>
   );

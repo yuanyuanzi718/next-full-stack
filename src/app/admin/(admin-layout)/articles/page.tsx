@@ -12,6 +12,26 @@ interface DataType {
   title: string;
   content: string;
 }
+
+const typeEnum = [
+  {
+    value: "sport",
+    label: "体育",
+  },
+  {
+    value: "economy",
+    label: "经济",
+  },
+  {
+    value: "health",
+    label: "健康",
+  },
+  {
+    value: "cars",
+    label: "汽车",
+  },
+];
+
 export default function ArticlesPage() {
   const [open, setOpen] = useState(false);
   const [list, setList] = useState([]);
@@ -101,6 +121,15 @@ export default function ArticlesPage() {
       dataIndex: "newsType",
       key: "newsType",
       width: "20%",
+      render: (_, { newsType }: any) => {
+        let tem = "";
+        typeEnum.forEach((item) => {
+          if (newsType === item.value) {
+            tem = item.label;
+          }
+        });
+        return tem;
+      },
     },
     {
       title: "简介",

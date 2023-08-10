@@ -78,19 +78,19 @@ const Edit: React.FC<CollectionCreateFormProps> = ({ open, onCreate, onCancel, f
           <Select
             options={[
               {
-                value: "体育",
+                value: "sport",
                 label: "体育",
               },
               {
-                value: "经济",
+                value: "economy",
                 label: "经济",
               },
               {
-                value: "健康",
+                value: "health",
                 label: "健康",
               },
               {
-                value: "汽车",
+                value: "cars",
                 label: "汽车",
               },
             ]}

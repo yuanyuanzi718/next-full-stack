@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 };
 function Newslayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.main}>
+    <div className={styles.layoutMain}>
       <ThemeProvider>
-        <div className={styles.container}>
+        <div className={styles.layoutContainer}>
           <Navbar />
-          {children}
+          <div className={styles.layoutContent}>{children}</div>
           <Footer />
         </div>
       </ThemeProvider>

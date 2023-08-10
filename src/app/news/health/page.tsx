@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch(process.env.URL + "/api/news/sport", {
+  const res = await fetch(process.env.URL + "/api/news/health", {
     method: "GET",
     next: { revalidate: 3600 * 24 },
   });
@@ -15,14 +15,14 @@ async function getData() {
   return res.json();
 }
 
-async function SportPage() {
+async function HealthPage() {
   const { data } = await getData();
   return (
     <div className={styles.container}>
       <ul className={styles.ul}>
         {data.map((item: any) => {
           return (
-            <Link href={`/news/sport/${item.id}`} key={item.id}>
+            <Link href={`/news/health/${item.id}`} key={item.id}>
               <li className={styles.li}>
                 <div className={styles.image}>
                   <Image
@@ -48,4 +48,4 @@ async function SportPage() {
   );
 }
 
-export default SportPage;
+export default HealthPage;
