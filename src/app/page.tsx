@@ -1,6 +1,5 @@
 "use client";
-import { Card, Row, Col, Divider, Typography } from "antd";
-import Link from "next/link";
+import { Card, Typography } from "antd";
 const { Title, Paragraph } = Typography;
 
 export default function Home() {
@@ -26,16 +25,8 @@ export default function Home() {
         </Paragraph>
         <Title>项目</Title>
         <div style={{ display: "flex", gap: 50 }}>
-          <Card title="新闻前台" extra={<a href="/news">地址</a>} style={{ width: 300 }}>
-            <p>Card content</p>
-            <p>Card content</p>
-            <p>Card content</p>
-          </Card>
-          <Card title="新闻管理后台" extra={<a href="/admin/login">地址</a>} style={{ width: 300 }}>
-            <p>Card content</p>
-            <p>Card content</p>
-            <p>Card content</p>
-          </Card>
+          <Card title="新闻前台" extra={<a href="/news">地址</a>} style={{ width: 300 }}></Card>
+          <Card title="新闻管理后台" extra={<a href="/admin/login">地址</a>} style={{ width: 300 }}></Card>
         </div>
       </Typography>
     </div>

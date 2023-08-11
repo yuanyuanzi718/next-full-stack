@@ -27,6 +27,7 @@ const Navbar = () => {
       <div className={styles.links}>
         {links.map((link) => (
           <Link
+            style={{ fontSize: 20 }}
             key={link.id}
             href={link.url}
             className={current === link.id || pathname.includes(link.id) ? styles.type : styles.nonetype}
