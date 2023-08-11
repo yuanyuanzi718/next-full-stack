@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import dayjs from "dayjs";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 async function getData() {
   const res = await fetch(process.env.URL + "/api/news/economy", {
@@ -14,6 +15,11 @@ async function getData() {
   }
   return res.json();
 }
+
+export const metadata: Metadata = {
+  title: "经济新闻",
+  description: "经济新闻",
+};
 
 async function EconomyPage() {
   const { data } = await getData();
