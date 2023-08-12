@@ -31,17 +31,17 @@ export default function LoginPage() {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-        <Form.Item label="Username" name="username" rules={[{ required: true, message: "Please input your username!" }]}>
+        <Form.Item label="账号" name="username" rules={[{ required: true, message: "请输入你的账号!" }]}>
           <Input />
         </Form.Item>
 
-        <Form.Item label="Password" name="password" rules={[{ required: true, message: "Please input your password!" }]}>
+        <Form.Item label="密码" name="password" rules={[{ required: true, message: "请输入你的密码!" }]}>
           <Input.Password />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            登录
           </Button>
         </Form.Item>
       </Form>

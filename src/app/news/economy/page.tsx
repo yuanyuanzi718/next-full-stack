@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 async function getData() {
   const res = await fetch(process.env.URL + "/api/news/economy", {
     method: "GET",
-    next: { revalidate: 3600 * 24 },
+    cache: "no-store",
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
