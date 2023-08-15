@@ -32,11 +32,11 @@ export default function LoginPage() {
         autoComplete="off"
       >
         <Form.Item label="账号" name="username" rules={[{ required: true, message: "请输入你的账号!" }]}>
-          <Input />
+          <Input placeholder="随便写" />
         </Form.Item>
 
         <Form.Item label="密码" name="password" rules={[{ required: true, message: "请输入你的密码!" }]}>
-          <Input.Password />
+          <Input.Password placeholder="随便写" />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

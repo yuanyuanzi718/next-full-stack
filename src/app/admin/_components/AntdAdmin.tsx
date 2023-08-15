@@ -1,15 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, DashboardOutlined } from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import news from "../../../../public/news.png";
+import menuData from "./menu";
 const { Header, Sider, Content } = Layout;
 
 function AntdContainer({ children }: any) {
   const nav = useRouter();
   const pathname = usePathname();
+  console.log(pathname, "pathname");
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -26,19 +29,15 @@ function AntdContainer({ children }: any) {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["/admin/dashboard"]}
-          selectedKeys={[current]}
+          defaultSelectedKeys={[current]}
+          // selectedKeys={[current]}
+          // defaultOpenKeys={["/admin/hooks"]}
+          // selectedKeys={["/admin/hooks"]}
           onClick={({ key }) => {
             setCurrent(key);
             nav.push(key);
           }}
-          items={[
-            {
-              key: "/admin/articles",
-              icon: <UserOutlined />,
-              label: "文章管理",
-            },
-          ]}
+          items={menuData}
         />
       </Sider>
       <Layout>
