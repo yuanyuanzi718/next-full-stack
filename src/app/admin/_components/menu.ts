@@ -16,6 +16,14 @@ const menuData: any = [
         key: "/admin/hooks/useState",
         label: "useState",
       },
+      {
+        key: "/admin/hooks/useEffect",
+        label: "useEffect",
+      },
+      {
+        key: "/admin/hooks/useRef",
+        label: "useRef",
+      },
     ],
   },
 ];

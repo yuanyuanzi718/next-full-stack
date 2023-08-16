@@ -11,8 +11,6 @@ const { Header, Sider, Content } = Layout;
 function AntdContainer({ children }: any) {
   const nav = useRouter();
   const pathname = usePathname();
-  console.log(pathname, "pathname");
-
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -30,7 +28,7 @@ function AntdContainer({ children }: any) {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[current]}
-          // selectedKeys={[current]}
+          selectedKeys={[current]}
           // defaultOpenKeys={["/admin/hooks"]}
           // selectedKeys={["/admin/hooks"]}
           onClick={({ key }) => {
