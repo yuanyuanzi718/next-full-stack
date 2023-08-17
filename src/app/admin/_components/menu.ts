@@ -10,7 +10,7 @@ const menuData: any = [
   {
     key: "/admin/hooks",
     icon: React.createElement(UserOutlined),
-    label: "Hooks大全",
+    label: "常用Hooks",
     children: [
       {
         key: "/admin/hooks/useState",
@@ -23,6 +23,26 @@ const menuData: any = [
       {
         key: "/admin/hooks/useRef",
         label: "useRef",
+      },
+      {
+        key: "/admin/hooks/useImperativeHandle",
+        label: "useImperativeHandle",
+      },
+      {
+        key: "/admin/hooks/useContext",
+        label: "useContext",
+      },
+      {
+        key: "/admin/hooks/useMemo",
+        label: "useMemo",
+      },
+      {
+        key: "/admin/hooks/useCallback",
+        label: "useCallback",
+      },
+      {
+        key: "/admin/hooks/useDeferredValue",
+        label: "useDeferredValue",
       },
     ],
   },
