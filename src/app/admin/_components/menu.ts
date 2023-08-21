@@ -40,10 +40,6 @@ const menuData: any = [
         key: "/admin/hooks/useCallback",
         label: "useCallback",
       },
-      {
-        key: "/admin/hooks/useDeferredValue",
-        label: "useDeferredValue",
-      },
     ],
   },
 ];
