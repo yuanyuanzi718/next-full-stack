@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { star } from "../../../../public/nike/icons";
 const ReviewCard = ({ imgURL, customerName, rating, feedback }: any) => {
+  console.log(imgURL, "imgURL");
+
   return (
     <div className="flex justify-center items-center flex-col">
       <Image src={imgURL} alt="customer" className="rounded-full object-cover w-[120px] h-[120px]" />
