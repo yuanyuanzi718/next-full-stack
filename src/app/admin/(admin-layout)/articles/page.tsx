@@ -43,12 +43,15 @@ export default function ArticlesPage() {
   const [html, setHtml] = useState("<p>hello</p>"); // 富文本
 
   useEffect(() => {
+    console.log("1");
+
     fetch(`/api/admin/articles?per=${query.per}&page=${query.page}&title=${query.title}`)
       .then((res) => res.json())
       .then((res) => {
         setList(res.data.list);
         setTotal(res.data.total);
       });
+    console.log("2");
   }, [query]);
 
   const onCreate = async (values: any) => {

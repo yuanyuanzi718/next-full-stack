@@ -27,6 +27,9 @@ export default function Home() {
         <div style={{ display: "flex", gap: 50 }}>
           <Card title="新闻前台" extra={<a href="/news">地址</a>} style={{ width: 300 }}></Card>
           <Card title="新闻管理后台" extra={<a href="/admin/login">地址</a>} style={{ width: 300 }}></Card>
+          <Card title="NKE官网页面" extra={<a href="/admin/nike">地址</a>} style={{ width: 300 }}>
+            <p>用tailwind.css写,练习一下tailwind.css</p>
+          </Card>
         </div>
       </Typography>
     </div>

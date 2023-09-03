@@ -7,7 +7,7 @@ function NikePage() {
   return (
     <main className="relative">
       <Nav />
-      <section className="pl-8 pr-8 pb-12 xl:sm:pl-16 wide:sm:pr-16 sm:pb-24 ">
+      <section className="xl:sm:pl-16 pl-8 wide:sm:pr-16 pr-8 sm:pb-24 pb-12 ">
         <Hero />
       </section>
       <section className="sm:px-16 px-8 sm:py-24 py-12">
